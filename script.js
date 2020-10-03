@@ -32,7 +32,7 @@ function rpsGame(yourChoice){
   results=decideWinner(humanChoice, botChoice);
   console.log(results);
   console.log('computerChoice', botChoice);
-  // message=finalMessage(results);
+  message=finalMessage(results);
 
  // rpsFrontEnd(yourChoice,botChoice,message);
 }
@@ -57,6 +57,17 @@ function decideWinner(yourChoice, computerChoice){
   var yourScore=rpsDatabase[yourChoice][computerChoice];
   var computerScore=rpsDatabase[computerChoice][yourChoice];
 
-   return [yourScore, computerScore]
+   return [yourScore, computerScore];
 }
 
+function finalMessage([yourScore, computerScore]){
+  if(yourScore==0){
+    return {'message': 'you lost' ,'color':'red'};
+    
+  }else if(yourScore==0.5){
+    return {'message': 'you tied', 'color':'yellow'};
+
+  } else {
+    return {'message': 'you won', 'color':'green'};
+  }
+}

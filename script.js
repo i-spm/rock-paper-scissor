@@ -60,7 +60,7 @@ function decideWinner(yourChoice, computerChoice){
    return [yourScore, computerScore];
 }
 
-function finalMessage([yourScore, computerScore]){
+function finalMessage([yourScore]){
   if(yourScore==0){
     return {'message': 'you lost' ,'color':'red'};
     
